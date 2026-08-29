@@ -1,0 +1,35 @@
+/* Tip Top website: responsive collapses for the inline-styled sections. Shared by index.html (desktop) and mobile.html. */
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--white); }
+:root { --gutter: var(--container-gutter); --sectionpad: var(--section-pad-desktop); }
+.aa-nav-burger { display: none !important; }
+/* Responsive collapses for the inline-styled grids */
+@media (max-width: 1060px) {
+  .aa-nav-links { display: none !important; }
+  .aa-hero-grid, .aa-pos-grid, .aa-services-grid, .aa-villa-grid, .aa-standards-grid,
+  .aa-assess-grid, .aa-coverage-grid, .aa-faq-grid, .aa-pets-head { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .aa-pets-feature { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .aa-pillars-grid, .aa-quotes-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .aa-pillars-grid > div, .aa-quotes-grid > figure { border-bottom: 1px solid var(--border-subtle); padding-bottom: 26px; }
+  .aa-process-grid { grid-template-columns: 1fr 1fr !important; }
+  .aa-trust-grid { grid-template-columns: 1fr 1fr !important; }
+  .aa-trust-grid > div:nth-child(3) { border-left: none !important; }
+  .aa-projects-list { grid-template-columns: 1fr 1fr !important; gap: 0 24px; }
+  .aa-projects-list > div:nth-child(3) { border-left: none !important; }
+  .aa-services-side { position: static !important; }
+  .aa-footer-grid { grid-template-columns: 1fr 1fr !important; }
+  .aa-nav-burger { display: inline-flex !important; }
+}
+@media (max-width: 900px) {
+  :root { --sectionpad: calc((var(--section-pad-desktop) + var(--section-pad-mobile)) / 2); }
+}
+@media (max-width: 640px) {
+  .aa-nav-phone { display: none !important; }
+  .aa-process-grid, .aa-trust-grid, .aa-projects-list, .aa-footer-grid { grid-template-columns: 1fr !important; }
+  .aa-trust-grid > div, .aa-projects-list > div { border-left: none !important; }
+  .aa-wa-label { display: none; }
+  :root { --gutter: var(--container-gutter-mobile); --sectionpad: var(--section-pad-mobile); }
+  .aa-hero-grid > div:last-child { min-height: 340px !important; }
+  .aa-nav-cta { display: none !important; }
+  .aa-projects-head, .aa-section-head { flex-direction: column !important; align-items: flex-start !important; }
+}

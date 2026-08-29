@@ -1,0 +1,42 @@
+/* Tip Top typography tokens.
+   One family, used with discipline: Instrument Sans (Arial fallback).
+   Neutral and timeless: hierarchy comes from size, weight and space, not from
+   contrasting typefaces. Regular (400) at display sizes, regular for body,
+   medium/semibold for UI and tracked uppercase labels. */
+:root {
+  --font-display: 'Instrument Sans', Arial, sans-serif;
+  --font-body: 'Instrument Sans', Arial, sans-serif;
+  --font-ui: 'Instrument Sans', Arial, sans-serif;
+
+  /* Weights: 400 is the floor (Instrument Sans starts at 400); semibold is the ceiling */
+  --weight-extralight: 400;
+  --weight-light: 400;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* Type scale (desktop) */
+  --text-display-xl: 72px;   /* hero statements */
+  --text-display: 56px;      /* section-opening headlines */
+  --text-h1: 46px;
+  --text-h2: 36px;
+  --text-h3: 26px;
+  --text-h4: 20px;
+  --text-body-lg: 19px;
+  --text-body-md: 16.5px;
+  --text-body-sm: 14.5px;
+  --text-caption: 13px;
+  --text-label: 12.5px;      /* small uppercase labels only */
+
+  /* Leading */
+  --leading-display: 1.3;   /* 64px / 83px, matching the reference setting */
+  --leading-heading: 1.14;
+  --leading-body: 1.68;
+  --leading-tight: 1.35;
+
+  /* Tracking — a neutral grotesk wants real optical correction at size */
+  --tracking-display: -0.025em;
+  --tracking-heading: -0.02em;
+  --tracking-body: 0;
+  --tracking-label: 0.16em;
+}

@@ -1,0 +1,64 @@
+/* Tip Top — colour tokens. Deep teal leads and does the work; mint is the accent, used in small doses. */
+:root {
+  /* Brand palette */
+  --tip-teal: #1F5869;
+  --mid-teal: #77C8BF;
+  --aqua: #C8E2E1;
+  --ink: #153F4D;
+  --slate: #6C8087;
+  --mist: #F5F8F8;
+  --white: #FFFFFF;
+
+  /* Mint — the logo colour and the accent action colour (mint buttons on Ink or Mist). Never body text. */
+  --mint-tint: #DFEDED;
+
+  /* Signature gradient — reserved for rare feature moments only; never an accent dash */
+  --gradient-tip: linear-gradient(90deg, #C8E2E1 0%, #77C8BF 43%, #1F5869 100%); /* @kind color */
+  --gradient-tip-vertical: linear-gradient(180deg, #C8E2E1 0%, #77C8BF 43%, #1F5869 100%); /* @kind color */
+
+  /* Derived shades (oklch-tuned from Tip Teal / Ink) */
+  --tip-teal-deep: #153F4D;      /* hover / pressed on primary */
+  --aqua-tint: #DFEDED;             /* pale teal wash, chips on Mist */
+  --ink-soft: #1F4A59;              /* dark-section raised surface */
+
+  /* Surfaces */
+  --surface-page: var(--white);
+  --surface-tint: var(--mist);
+  --surface-card: var(--white);
+  --surface-dark: var(--ink);
+
+  /* Text */
+  --text-heading: var(--ink);
+  --text-body: #2E4550;
+  --text-secondary: var(--slate);
+  --text-on-dark: var(--white);
+  --text-on-dark-secondary: #A9C3C8;
+  --text-accent: var(--tip-teal);
+  --text-label: var(--tip-teal);  /* small tracked uppercase labels */
+
+  /* Interactive — actions are Ink Teal (primary) or Mint (accent action). Tip Teal stays for text, labels and links. */
+  --action-primary: var(--ink);
+  --action-primary-hover: #0E2E39;
+  --action-mint: var(--mid-teal);
+  --action-mint-hover: #62B9B0;
+  --text-on-mint: var(--white);
+  --action-whatsapp: #25D366;        /* WhatsApp brand green — only for WhatsApp actions */
+  --action-whatsapp-hover: #1EB855;
+  --link: var(--tip-teal);
+  --link-hover: var(--tip-teal-deep);
+  --focus-ring: 0 0 0 3px rgba(21, 63, 77, 0.35);
+
+  /* Lines */
+  --border-subtle: #E1EBEB;
+  --border-strong: #C8DADA;
+  --border-on-dark: rgba(255, 255, 255, 0.14);
+
+  /* Functional (intentional additions — used sparingly in forms/feedback) */
+  --positive: #1E7A4F;
+  --negative: #AD3A32;
+
+  /* Accent aliases */
+  --text-accent-warm: var(--tip-teal);
+  --action-accent: var(--mid-teal);
+  --action-accent-hover: var(--aqua);
+}

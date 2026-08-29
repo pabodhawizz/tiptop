@@ -1,0 +1,23 @@
+/* Tip Top — radii, shadows, borders, motion. Subtle everything: flat, calm, precise. */
+:root {
+  /* Corner radii — subtle rounding, never pill-shaped cards */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;   /* buttons & chips only */
+
+  /* Shadows — barely-there; the brand avoids exaggerated elevation */
+  --shadow-card: 0 1px 2px rgba(35, 31, 32, 0.04), 0 10px 30px rgba(31, 88, 105, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(35, 31, 32, 0.05), 0 16px 40px rgba(31, 88, 105, 0.10);
+  --shadow-dialog: 0 24px 64px rgba(35, 31, 32, 0.18);
+
+  /* Hairlines */
+  --hairline: 1px solid var(--border-subtle);
+
+  /* Motion — quiet fades and small translates; no bounces */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --duration-fast: 160ms; /* @kind other */
+  --duration-medium: 260ms; /* @kind other */
+  --duration-slow: 480ms; /* @kind other */
+}

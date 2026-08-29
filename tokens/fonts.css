@@ -1,0 +1,6 @@
+/* Tip Top typefaces.
+   The system is set in Instrument Sans, loaded from Google Fonts, with Arial as fallback.
+   Instrument Sans ships weights 400 to 700, so 400 is the lightest weight available:
+   display sizes use Regular, not a light cut.
+   The Manrope / Space Grotesk TTFs in assets/fonts/ are legacy and unused. */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");

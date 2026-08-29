@@ -1,0 +1,27 @@
+/* Tip Top — spacing & layout tokens. Generous white space is a brand behaviour, not a garnish. */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* Sections & containers */
+  --section-pad-desktop: 128px;   /* vertical rhythm between homepage sections */
+  --section-pad-mobile: 72px;
+  --container-max: 1240px;
+  --container-gutter: 32px;
+  --container-gutter-mobile: 20px;
+  --content-measure: 62ch;        /* max width for running body text */
+
+  /* Controls */
+  --control-height-lg: 56px;      /* primary CTAs */
+  --control-height-md: 48px;
+  --control-height-sm: 40px;
+  --hit-target-min: 44px;
+}
