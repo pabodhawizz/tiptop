@@ -23,6 +23,59 @@ body { margin: 0; background: var(--white); }
 @media (max-width: 900px) {
   :root { --sectionpad: calc((var(--section-pad-desktop) + var(--section-pad-mobile)) / 2); }
 }
+
+/* ---- Hero responsive fixes ---- */
+/* The left column pads by max(gutter, (100vw - container-max)/2) to align text
+   with the 1240px container. That calc assumes the grid spans the full viewport,
+   but the grid was capped at 1600px and centred, so above 1600px the text was
+   pushed right by the centring offset and the headline cramped. Full-bleed grid
+   restores the alignment; the inner padding still holds the text to the container. */
+.aa-hero-grid { max-width: none !important; }
+
+/* Avoid a single stranded word on the last line of the headline. */
+.aa-hero-h1 { text-wrap: pretty; }
+
+/* The headline (19ch) and body copy (46ch) use character-based max-widths, which
+   exceed the viewport on small phones and overflow. Cap them to the column. */
+.aa-hero-grid > div:first-child > * { max-width: 100% !important; }
+
+/* Stacked columns are `1fr`, whose implicit min-width:auto lets wide content push
+   the column past the viewport. minmax(0,1fr) lets the text wrap instead. */
+.aa-hero-grid > div { min-width: 0; }
+
+/* Same guard for every other stacked grid on the page. */
+.aa-hero-grid > *, .aa-pos-grid > *, .aa-services-grid > *, .aa-villa-grid > *,
+.aa-standards-grid > *, .aa-assess-grid > *, .aa-coverage-grid > *, .aa-faq-grid > *,
+.aa-pets-head > *, .aa-pillars-grid > *, .aa-quotes-grid > *, .aa-process-grid > *,
+.aa-trust-grid > *, .aa-projects-list > *, .aa-footer-grid > * { min-width: 0; }
+
+@media (max-width: 1060px) {
+  .aa-hero-grid, .aa-pos-grid, .aa-services-grid, .aa-villa-grid, .aa-standards-grid,
+  .aa-assess-grid, .aa-coverage-grid, .aa-faq-grid, .aa-pets-head {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+@media (max-width: 640px) {
+  .aa-process-grid, .aa-trust-grid, .aa-projects-list, .aa-footer-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Stacked layout: scale the image block with the viewport rather than sitting at a
+   fixed 560px. Height is set directly — aspect-ratio would derive WIDTH from the
+   min-height here and push the column past the screen edge. */
+@media (max-width: 1060px) {
+  .aa-hero-grid > div:last-child {
+    min-height: 0 !important;
+    height: clamp(300px, 46vw, 460px);
+  }
+}
+@media (max-width: 640px) {
+  .aa-hero-grid > div:last-child {
+    min-height: 0 !important;
+    height: clamp(240px, 62vw, 320px);
+  }
+}
 @media (max-width: 640px) {
   .aa-nav-phone { display: none !important; }
   .aa-process-grid, .aa-trust-grid, .aa-projects-list, .aa-footer-grid { grid-template-columns: 1fr !important; }
