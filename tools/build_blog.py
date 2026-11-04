@@ -29,6 +29,11 @@ REQUIRED = {"title", "description", "target_keyword", "label", "image", "image_a
             "image_w", "image_h", "date", "service_link", "service_label"}
 
 
+def img_path(p):
+    """Site path of an article's header image: assets/blog/... or the brand photography."""
+    return "/assets/" + (p["image"] if "/" in p["image"] else "photography/" + p["image"])
+
+
 def esc(s):
     return html.escape(s, quote=True)
 
@@ -132,7 +137,7 @@ def cta(p):
 def article(p, posts):
     by_slug = {q["slug"]: q for q in posts}
     related = [by_slug[s] for s in p.get("related", []) if s in by_slug][:3]
-    img = f"{SITE}/assets/photography/{p['image']}"
+    img = f"{SITE}{img_path(p)}"
     ld = [
         {"@context": "https://schema.org", "@type": "BlogPosting",
          "headline": p["title"], "description": p["description"],
@@ -165,7 +170,7 @@ def article(p, posts):
     <p class="tt-meta"><time datetime="{p['date']}">{pretty}</time> · {p['minutes']} min read · By the Tip Top team</p>
   </div>
   <figure class="tt-wrap tt-hero">
-    <img src="/assets/photography/{p['image']}" alt="{esc(p['image_alt'])}" width="{p['image_w']}" height="{p['image_h']}" fetchpriority="high">
+    <img src="{img_path(p)}" alt="{esc(p['image_alt'])}" width="{p['image_w']}" height="{p['image_h']}" fetchpriority="high">
   </figure>
   <div class="tt-wrap tt-narrow tt-body">
 {p['body']}
@@ -189,7 +194,7 @@ def index(posts):
                          "datePublished": p["date"]} for p in posts]}]
     cards = "\n".join(f"""  <li class="tt-card">
     <a href="/blog/{p['slug']}/">
-      <img src="/assets/photography/{p['image']}" alt="" width="{p['image_w']}" height="{p['image_h']}" loading="lazy" decoding="async">
+      <img src="{img_path(p)}" alt="" width="{p['image_w']}" height="{p['image_h']}" loading="lazy" decoding="async">
       <span class="tt-label">{esc(p['label'])}</span>
       <span class="tt-card-title">{esc(p['title'])}</span>
       <span class="tt-card-desc">{esc(p['description'])}</span>
