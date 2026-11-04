@@ -1,13 +1,9 @@
 # Fetches the generated blog header photos (tools/blog-images.json) into
 # assets/blog/, rebuilds the blog and commits the result back to the branch.
-# Runs when the image list changes, or manually from the Actions tab.
+# Run it manually from the Actions tab; it pushes to the blog-images-output branch.
 name: Fetch blog images
 
 on:
-  push:
-    paths:
-      - tools/blog-images.json
-      - .github/workflows/blog-images.yml
   workflow_dispatch:
 
 permissions:
@@ -37,5 +33,6 @@ jobs:
             echo "Nothing to commit"
           else
             git commit -m "Add generated header photo for each blog article"
-            git push
+            # Push to a side branch; the result is merged into the PR branch from there.
+            git push --force origin HEAD:refs/heads/blog-images-output
           fi
