@@ -234,6 +234,7 @@ Ready for a home that's tip top, top to bottom?
             ['Our process', '#process'],
             ['Projects', '#projects'],
             ['FAQ', '#faq'],
+            ['Blog', '/blog/'],
             ['Book an assessment', '#assessment'],
           ]} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
