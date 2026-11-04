@@ -1,0 +1,38 @@
+# Fetches the generated blog header photos (tools/blog-images.json) into
+# assets/blog/, rebuilds the blog and commits the result back to the branch.
+# Run it manually from the Actions tab; it pushes to the blog-images-output branch.
+name: Fetch blog images
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-images-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow==11.0.0
+      - run: python3 tools/fetch_blog_images.py
+      - run: python3 tools/build_blog.py
+      - name: Commit images and rebuilt pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/blog blog-src blog sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "Add generated header photo for each blog article"
+            # Push to a side branch; the result is merged into the PR branch from there.
+            git push --force origin HEAD:refs/heads/blog-images-output
+          fi
