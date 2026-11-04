@@ -35,7 +35,7 @@ function Hero() {
           </p>
         </div>
         <div style={{ position: 'relative', minHeight: 560 }}>
-          <img src="../../assets/photography/brand-hero-cleaner.png" alt="A Tip Top cleaner smoothing a throw in a pristine sunlit Sharjah living room"
+          <img fetchpriority="high" src="../../assets/photography/brand-hero-cleaner.jpg" alt="A Tip Top cleaner smoothing a throw in a pristine sunlit Sharjah living room"
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
       </div>

@@ -1530,7 +1530,7 @@ function Hero() {
       minHeight: 560
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/photography/brand-hero-cleaner.png",
+    src: "../../assets/photography/brand-hero-cleaner.jpg",
     alt: "A Tip Top cleaner smoothing a throw in a pristine sunlit Sharjah living room",
     style: {
       position: 'absolute',
@@ -1984,7 +1984,7 @@ function Standards() {
       marginTop: 40
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/photography/brand-office-team.png",
+    src: "../../assets/photography/brand-office-team.jpg",
     alt: "Two uniformed Tip Top team members cleaning glass and vacuuming an office",
     style: {
       display: 'block',
@@ -2129,49 +2129,49 @@ const SERVICES = [{
   title: 'Residential deep cleaning',
   desc: 'Top-to-bottom deep cleaning for homes of every size.',
   scopes: ['Villa', 'Townhouse', 'Studio', '1–4+ Bed'],
-  img: '../../assets/photography/brand-kitchen-cleaner.png',
+  img: '../../assets/photography/brand-kitchen-cleaner.jpg',
   alt: 'Cleaner wiping a marble kitchen counter'
 }, {
   n: '02',
   title: 'Upholstery & specialised cleaning',
   desc: 'Deep extraction cleaning for sofas, carpets, mattresses and curtains.',
   scopes: ['Sofa', 'Carpet', 'Mattress', 'Curtain'],
-  img: '../../assets/photography/brand-upholstery-tech.png',
+  img: '../../assets/photography/brand-upholstery-tech.jpg',
   alt: 'A technician deep-cleaning a sofa with an extraction machine'
 }, {
   n: '03',
   title: 'Office & commercial cleaning',
   desc: 'Spotless offices, retail, restaurants and commercial spaces.',
   scopes: ['Offices', 'Retail', 'Restaurants', 'Buildings'],
-  img: '../../assets/photography/brand-office-team.png',
+  img: '../../assets/photography/brand-office-team.jpg',
   alt: 'A Tip Top team cleaning a bright Sharjah office'
 }, {
   n: '04',
   title: 'Move-in, move-out & post-construction',
   desc: 'Fresh-start cleaning for moves, handovers and renovations.',
   scopes: ['Move-In', 'Move-Out', 'Post-Construction'],
-  img: '../../assets/photography/brand-move-out-clean.png',
+  img: '../../assets/photography/brand-move-out-clean.jpg',
   alt: 'A living room transformed, before and after'
 }, {
   n: '05',
   title: 'Sanitisation, glass & windows',
   desc: 'Full disinfection plus streak-free glass and window cleaning.',
   scopes: ['Sanitisation', 'Glass & Window'],
-  img: '../../assets/photography/brand-glass-detail.png',
+  img: '../../assets/photography/brand-glass-detail.jpg',
   alt: 'Water droplets on a blue-white surface'
 }, {
   n: '06',
   title: 'Pet grooming & home pet care',
   desc: 'Gentle grooming, sitting and walking, plus deep cleaning built for pet homes.',
   scopes: ['Grooming', 'Sitting', 'Walking', 'Odour Removal'],
-  img: '../../assets/photography/brand-pet-grooming-v2.png',
+  img: '../../assets/photography/brand-pet-grooming-v2.jpg',
   alt: 'A groomer gently brushing a relaxed golden retriever at home'
 }, {
   n: '07',
   title: 'AC, pest control & building care',
   desc: 'AC duct and coil, pest control, facade, water tank and marble polishing.',
   scopes: ['AC Duct & Coil', 'Pest Control', 'Marble'],
-  img: '../../assets/photography/brand-hero-living-room.png',
+  img: '../../assets/photography/brand-hero-living-room.jpg',
   alt: 'A cared-for Sharjah apartment interior'
 }];
 function ServiceRow({
@@ -2519,7 +2519,7 @@ function PetCare() {
       overflow: 'hidden'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/photography/pet-sitting-walking.png",
+    src: "../../assets/photography/pet-sitting-walking.jpg",
     alt: "A Tip Top pet carer walking two dogs on a leafy Sharjah street",
     style: {
       display: 'block',
@@ -2623,7 +2623,7 @@ function VillaFeature() {
       overflow: 'hidden'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/photography/brand-villa-family-v2.png",
+    src: "../../assets/photography/brand-villa-family-v2.jpg",
     alt: "A mother laughing with her son on a spotless villa floor",
     style: {
       display: 'block',
@@ -3132,7 +3132,7 @@ function Footer() {
       height: 'clamp(560px, 62vw, 880px)'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/photography/brand-footer-dusk.png",
+    src: "../../assets/photography/brand-footer-dusk.jpg",
     alt: "",
     style: {
       width: '100%',

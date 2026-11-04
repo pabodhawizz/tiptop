@@ -39,15 +39,23 @@ function BeforeAfter() {
       onMouseDown={(e) => { dragging.current = true; update(e.clientX); }}
       onTouchStart={(e) => { dragging.current = true; update(e.touches[0].clientX); }}
       style={{ position: 'relative', borderRadius: 'var(--radius-md)', overflow: 'hidden', height: 520, cursor: 'ew-resize', userSelect: 'none' }}>
-      <img src="../../assets/photography/brand-after-living-room.jpg" alt="Sharjah living room after the Tip Top deep clean" draggable="false"
+      <img loading="lazy" decoding="async" src="../../assets/photography/brand-after-living-room.jpg" alt="Sharjah living room after the Tip Top deep clean" draggable="false"
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
       <div style={{ position: 'absolute', inset: 0, width: `${pos}%`, overflow: 'hidden' }}>
-        <img src="../../assets/photography/brand-before-living-room.jpg" alt="The same living room before cleaning" draggable="false"
+        <img loading="lazy" decoding="async" src="../../assets/photography/brand-before-living-room.jpg" alt="The same living room before cleaning" draggable="false"
           style={{ position: 'absolute', top: 0, left: 0, height: '100%', width: `${10000 / pos}%`, maxWidth: 'none', objectFit: 'cover' }} />
       </div>
       {tag('BEFORE', 'left')}
       {tag('AFTER', 'right')}
       <div
+        role="slider" tabIndex={0} aria-label="Before and after comparison"
+        aria-valuemin={4} aria-valuemax={96} aria-valuenow={Math.round(pos)} aria-valuetext={`${Math.round(pos)}% before`}
+        onKeyDown={(e) => {
+          const step = { ArrowLeft: -5, ArrowDown: -5, ArrowRight: 5, ArrowUp: 5 }[e.key];
+          if (step) { e.preventDefault(); setPos((p) => Math.max(4, Math.min(96, p + step))); }
+          else if (e.key === 'Home') { e.preventDefault(); setPos(4); }
+          else if (e.key === 'End') { e.preventDefault(); setPos(96); }
+        }}
         onMouseDown={(e) => { dragging.current = true; update(e.clientX); }}
         onTouchStart={(e) => { dragging.current = true; update(e.touches[0].clientX); }}
         style={{ position: 'absolute', top: 0, bottom: 0, left: `${pos}%`, width: 2, background: 'var(--white)', boxShadow: '0 0 12px rgba(21,63,77,0.35)', cursor: 'ew-resize' }}>
@@ -57,7 +65,7 @@ function BeforeAfter() {
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3,
           boxShadow: 'var(--shadow-card-hover)',
         }}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--tip-teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--tip-teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="9 18 3 12 9 6" /><polyline points="15 6 21 12 15 18" />
           </svg>
         </span>
@@ -151,7 +159,7 @@ function Standards() {
               Standards you can hold us to.
             </h2>
             <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', marginTop: 40 }}>
-              <img src="../../assets/photography/brand-office-team.png" alt="Two uniformed Tip Top team members cleaning glass and vacuuming an office"
+              <img loading="lazy" decoding="async" src="../../assets/photography/brand-office-team.jpg" alt="Two uniformed Tip Top team members cleaning glass and vacuuming an office"
                 style={{ display: 'block', width: '100%', height: 300, objectFit: 'cover' }} />
             </div>
           </div>
@@ -190,7 +198,7 @@ Trusted across the city.
             </h2>
           </div>
           <span style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--text-secondary)' }}>
-            <span style={{ color: 'var(--tip-teal)', letterSpacing: '0.1em' }}>★★★★★</span>&ensp;4.9 average rating
+            <span aria-hidden="true" style={{ color: 'var(--tip-teal)', letterSpacing: '0.1em' }}>★★★★★</span>&ensp;4.9 average rating
           </span>
         </div>
         <div className="aa-quotes-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 48, borderTop: '1px solid var(--border-strong)' }}>
