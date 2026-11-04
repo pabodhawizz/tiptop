@@ -227,6 +227,9 @@ def sitemap(posts):
 
 
 def main():
+    import subprocess
+    if subprocess.run([sys.executable, str(ROOT / "tools" / "check_blog.py")]).returncode:
+        sys.exit("check_blog.py found errors; fix them before building")
     posts = load()
     for p in posts:
         d = OUT / p["slug"]
