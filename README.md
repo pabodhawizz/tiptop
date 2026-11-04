@@ -27,14 +27,15 @@ as-is.
 ## Known issues — worth fixing
 
 This is the design-system preview build, deployed as-is to get live quickly.
-Three things should be addressed before this carries real traffic:
+These things should be addressed before this carries real traffic:
 
 1. **Browser-side transpiling.** `index.html` loads React's *development* builds
    from unpkg and runs Babel Standalone to compile the JSX on every page load.
    Slow first paint, console warnings, and an external dependency on unpkg.
    Fix: precompile the JSX and switch to production React.
-2. **Image weight.** The page loads ~60MB of PNGs. `brand-footer-dusk.png` alone
-   is 10.3MB. Recompressed to 1920px JPEG they land near 0.3MB each with no
-   visible loss — roughly a 50x reduction.
-3. **No meta tags.** No description, favicon, or Open Graph tags yet, so link
-   previews and search results will look bare.
+2. ~~**Image weight.**~~ Done: the PNGs were re-encoded as 1920px progressive
+   JPEGs (61.6MB → 2.9MB) and below-the-fold images lazy-load. The full-size
+   originals are in git history (before commit "Audit fixes").
+3. ~~**No meta tags.**~~ Done: description, canonical, Open Graph, favicon and
+   LocalBusiness JSON-LD are in `index.html`; `robots.txt` and `sitemap.xml`
+   are at the root. Update `sitemap.xml` `lastmod` when content changes.

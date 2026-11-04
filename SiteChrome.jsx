@@ -78,7 +78,7 @@ function NavLink({ href, children }) {
 function BurgerButton({ open, onClick }) {
   const bar = { display: 'block', width: 20, height: 1.5, background: 'var(--ink)', borderRadius: 2, transition: 'transform var(--duration-fast) var(--ease-standard), opacity var(--duration-fast) var(--ease-standard)' };
   return (
-    <button type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={onClick} className="aa-nav-burger"
+    <button type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="aa-mobile-menu" onClick={onClick} className="aa-nav-burger"
       style={{
         width: 44, height: 44, alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 5,
         background: 'transparent', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-sm)', cursor: 'pointer', padding: 0,
@@ -91,14 +91,15 @@ function BurgerButton({ open, onClick }) {
 
 function MobileMenu({ open, onClose }) {
   return (
-    <div aria-hidden={!open} style={{
+    <div id="aa-mobile-menu" aria-hidden={!open} style={{
       position: 'fixed', top: 76, left: 0, right: 0, bottom: 0, zIndex: 190,
       background: 'var(--white)', borderTop: '1px solid var(--border-subtle)',
       padding: '28px var(--gutter) 40px', overflowY: 'auto',
       display: 'flex', flexDirection: 'column', gap: 4,
       opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none',
+      visibility: open ? 'visible' : 'hidden',
       transform: open ? 'none' : 'translateY(-8px)',
-      transition: 'opacity var(--duration-medium) var(--ease-standard), transform var(--duration-medium) var(--ease-standard)',
+      transition: 'opacity var(--duration-medium) var(--ease-standard), transform var(--duration-medium) var(--ease-standard), visibility var(--duration-medium) var(--ease-standard)',
     }}>
       {NAV_LINKS.map((l) => (
         <a key={l.href} href={l.href} onClick={onClose} style={{
@@ -139,7 +140,7 @@ function Nav() {
         height: 76, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24,
       }}>
         <LogoLockup />
-        <nav style={{ display: 'flex', alignItems: 'center', gap: 32 }} className="aa-nav-links">
+        <nav aria-label="Main" style={{ display: 'flex', alignItems: 'center', gap: 32 }} className="aa-nav-links">
           {NAV_LINKS.map((l) => <NavLink key={l.href} href={l.href}>{l.label}</NavLink>)}
         </nav>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -193,7 +194,7 @@ function Footer() {
   return (
     <footer style={{ position: 'relative', background: '#000', color: 'var(--text-on-dark-secondary)', overflow: 'hidden' }} data-screen-label="Footer">
       <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 'clamp(560px, 62vw, 880px)' }}>
-        <img src="../../assets/photography/brand-footer-dusk.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', filter: 'brightness(0.58) saturate(0.9)' }} />
+        <img loading="lazy" decoding="async" src="../../assets/photography/brand-footer-dusk.jpg" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', filter: 'brightness(0.58) saturate(0.9)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.68) 42%, rgba(0,0,0,0.92) 75%, #000 97%)' }} />
       </div>
       <div style={{ position: 'relative', maxWidth: 'var(--container-max)', margin: '0 auto', padding: 'clamp(96px, 11vw, 150px) var(--gutter) clamp(120px, 15vw, 210px)', textAlign: 'center' }}>

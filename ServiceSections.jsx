@@ -6,49 +6,49 @@ const SERVICES = [
     n: '01', title: 'Residential deep cleaning',
     desc: 'Top-to-bottom deep cleaning for homes of every size.',
     scopes: ['Villa', 'Townhouse', 'Studio', '1–4+ Bed'],
-    img: '../../assets/photography/brand-kitchen-cleaner.png',
+    img: '../../assets/photography/brand-kitchen-cleaner.jpg',
     alt: 'Cleaner wiping a marble kitchen counter',
   },
   {
     n: '02', title: 'Upholstery & specialised cleaning',
     desc: 'Deep extraction cleaning for sofas, carpets, mattresses and curtains.',
     scopes: ['Sofa', 'Carpet', 'Mattress', 'Curtain'],
-    img: '../../assets/photography/brand-upholstery-tech.png',
+    img: '../../assets/photography/brand-upholstery-tech.jpg',
     alt: 'A technician deep-cleaning a sofa with an extraction machine',
   },
   {
     n: '03', title: 'Office & commercial cleaning',
     desc: 'Spotless offices, retail, restaurants and commercial spaces.',
     scopes: ['Offices', 'Retail', 'Restaurants', 'Buildings'],
-    img: '../../assets/photography/brand-office-team.png',
+    img: '../../assets/photography/brand-office-team.jpg',
     alt: 'A Tip Top team cleaning a bright Sharjah office',
   },
   {
     n: '04', title: 'Move-in, move-out & post-construction',
     desc: 'Fresh-start cleaning for moves, handovers and renovations.',
     scopes: ['Move-In', 'Move-Out', 'Post-Construction'],
-    img: '../../assets/photography/brand-move-out-clean.png',
+    img: '../../assets/photography/brand-move-out-clean.jpg',
     alt: 'A living room transformed, before and after',
   },
   {
     n: '05', title: 'Sanitisation, glass & windows',
     desc: 'Full disinfection plus streak-free glass and window cleaning.',
     scopes: ['Sanitisation', 'Glass & Window'],
-    img: '../../assets/photography/brand-glass-detail.png',
+    img: '../../assets/photography/brand-glass-detail.jpg',
     alt: 'Water droplets on a blue-white surface',
   },
   {
     n: '06', title: 'Pet grooming & home pet care',
     desc: 'Gentle grooming, sitting and walking, plus deep cleaning built for pet homes.',
     scopes: ['Grooming', 'Sitting', 'Walking', 'Odour Removal'],
-    img: '../../assets/photography/brand-pet-grooming-v2.png',
+    img: '../../assets/photography/brand-pet-grooming-v2.jpg',
     alt: 'A groomer gently brushing a relaxed golden retriever at home',
   },
   {
     n: '07', title: 'AC, pest control & building care',
     desc: 'AC duct and coil, pest control, facade, water tank and marble polishing.',
     scopes: ['AC Duct & Coil', 'Pest Control', 'Marble'],
-    img: '../../assets/photography/brand-hero-living-room.png',
+    img: '../../assets/photography/brand-hero-living-room.jpg',
     alt: 'A cared-for Sharjah apartment interior',
   },
 ];
@@ -105,7 +105,7 @@ Cleaning and pet care,<br />presented simply.
           <div className="aa-services-side" style={{ position: 'sticky', top: 108, display: 'flex', flexDirection: 'column', gap: 20 }}>
             <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', height: 420, position: 'relative' }}>
               {SERVICES.map((s, i) => (
-                <img key={s.n} src={s.img} alt={active === i ? s.alt : ''} style={{
+                <img key={s.n} loading="lazy" decoding="async" src={s.img} alt={active === i ? s.alt : ''} style={{
                   position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
                   opacity: active === i ? 1 : 0,
                   transition: 'opacity var(--duration-slow) var(--ease-standard)',
@@ -203,7 +203,7 @@ function PetCare() {
           </p>
         </div>
         <div className="aa-pets-feature" style={{ display: 'grid', gridTemplateColumns: '1.15fr 1fr', gap: 0, background: 'var(--mist)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-          <img src="../../assets/photography/pet-sitting-walking.png" alt="A Tip Top pet carer walking two dogs on a leafy Sharjah street" style={{ display: 'block', width: '100%', height: '100%', minHeight: 400, objectFit: 'cover' }} />
+          <img loading="lazy" decoding="async" src="../../assets/photography/pet-sitting-walking.jpg" alt="A Tip Top pet carer walking two dogs on a leafy Sharjah street" style={{ display: 'block', width: '100%', height: '100%', minHeight: 400, objectFit: 'cover' }} />
           <div style={{ padding: '44px 46px' }}>
             <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 24, letterSpacing: '-0.01em', margin: 0 }}>Pet caring and walking</h3>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 15.5, lineHeight: 1.7, color: 'var(--text-body)', margin: '14px 0 0' }}>
@@ -234,7 +234,7 @@ function VillaFeature() {
       <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: 'var(--sectionpad) var(--gutter)' }}>
         <div className="aa-villa-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
           <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-            <img src="../../assets/photography/brand-villa-family-v2.png" alt="A mother laughing with her son on a spotless villa floor"
+            <img loading="lazy" decoding="async" src="../../assets/photography/brand-villa-family-v2.jpg" alt="A mother laughing with her son on a spotless villa floor"
               style={{ display: 'block', width: '100%', height: 560, objectFit: 'cover' }} />
           </div>
           <div>

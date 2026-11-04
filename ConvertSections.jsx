@@ -41,8 +41,8 @@ function Assessment() {
           </div>
           <div style={{ background: 'var(--white)', borderRadius: 'var(--radius-lg)', padding: 40 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '18px 18px' }}>
-              <ACInput label="Full name" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
-              <ACInput label="Phone (WhatsApp)" placeholder="+971 …" value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <ACInput label="Full name" name="name" autoComplete="name" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
+              <ACInput label="Phone (WhatsApp)" type="tel" name="phone" autoComplete="tel" inputMode="tel" placeholder="+971 …" value={phone} onChange={(e) => setPhone(e.target.value)} />
               <ACSelect label="Property type" placeholder="Select…" value={type} onChange={(e) => setType(e.target.value)}
                 options={['Apartment', 'Villa', 'Townhouse', 'Office', 'Commercial space']} />
               <ACSelect label="Service" placeholder="Select…" value={service} onChange={(e) => setService(e.target.value)}

@@ -86,3 +86,13 @@ body { margin: 0; background: var(--white); }
   .aa-nav-cta { display: none !important; }
   .aa-projects-head, .aa-section-head { flex-direction: column !important; align-items: flex-start !important; }
 }
+
+/* ---- Accessibility ---- */
+/* Skip link: off-screen until focused by keyboard. */
+.aa-skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 1000;
+  padding: 12px 18px; border-radius: var(--radius-sm);
+  background: var(--ink); color: var(--white); font-family: var(--font-ui); font-weight: 600;
+}
+.aa-skip-link:focus { top: 16px; color: var(--white); }
+#main:focus { outline: none; }
